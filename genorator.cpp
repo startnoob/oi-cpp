@@ -4,7 +4,6 @@
 	> Mail: 1694487365@qq.com
 	> Created Time: Fri 05 Apr 2019 02:05:09 PM CST
  ************************************************************************/
-
 #include<bits/stdc++.h>
 using namespace std;
 #define M 500000

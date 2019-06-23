@@ -24,17 +24,10 @@ using namespace std;
 #define pi 3.14159265
 #define e 2.71828182
 #define fo(x1,x2,x3,x4) for(int x1=x2;x1<=x3;x1+=x4)
-
+int arr[10050];
 int main()
 {
-    int a,b;
-    cin>>a>>b;
-    int aw=0,dr=0,bw=0;
-    fo(i,1,6,1)
-    {
-        if(abs(a-i)<abs(b-i)) aw++;
-        else if(abs(a-i)==abs(b-i)) dr++;
-        else bw++;
-    }
-    printf("%d %d %d",aw,dr,bw);
+    int n;
+    cin>>n;
+    fo(i,1,n,1) cin>>arr[i];
 }

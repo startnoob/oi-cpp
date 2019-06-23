@@ -2,7 +2,7 @@
 	> File Name: ac.cpp
 	> Author: ralph
 	> Mail: 1694487365@qq.com
-	
+
  ************************************************************************/
 
 #include<iostream>
@@ -24,17 +24,22 @@ using namespace std;
 #define pi 3.14159265
 #define e 2.71828182
 #define fo(x1,x2,x3,x4) for(int x1=x2;x1<=x3;x1+=x4)
-
 int main()
 {
-    int a,b;
-    cin>>a>>b;
-    int aw=0,dr=0,bw=0;
-    fo(i,1,6,1)
+    int m,s;
+    cin>>m>>s;
+    if(s==0||m*9<s)
     {
-        if(abs(a-i)<abs(b-i)) aw++;
-        else if(abs(a-i)==abs(b-i)) dr++;
-        else bw++;
+        printf("-1 -1");
+        return 0;
     }
-    printf("%d %d %d",aw,dr,bw);
+    int sum = s;
+    for (int i = 0; i < m; i++)
+        for (int d = 0; d < 10; d++)
+            if ((i > 0 || d > 0 || (m == 1 && d == 0)) && can(m - i - 1, sum - d))
+            {
+                minn += char('0' + d);
+                sum -= d;
+                break;
+            }
 }

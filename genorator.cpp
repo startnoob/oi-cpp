@@ -7,13 +7,15 @@
 #include<bits/stdc++.h>
 using namespace std;
 #define M 500000
+int a[15];
 int main()
 {
-    int n,pos;
+    a[1]=1,a[2]=1,a[5]=1,a[6]=1,a[8]=1,a[11]=1,a[12]=2;
     srand(time(0));
-    n=rand()%200;
-    pos=rand()%n+1;
-    int tar=rand()%n+1;
-    printf("%d %d %d\n",n,pos,tar);
-    for(int i=1;i<=n;i++) cout<<rand()%40+1<<" ";
+    int n=rand()%12+1;
+    while(!a[n])
+    {
+        n=rand()%12+1;
+    }
+    cout<<n;
 }

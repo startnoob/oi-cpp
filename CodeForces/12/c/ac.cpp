@@ -40,11 +40,9 @@ int main()
 //	cout<<endl;
 	for(int i=0;i<tail;i++)
 	{
-//		cout<<ff[i].name<<" "<<ff[i].zz<<endl;
 		minx_ans+=ff[i].zz*arr[tail_ans];
 		maxx_ans+=ff[i].zz*arr[n-1-tail_ans];
 		tail_ans++;
-//		cout<<minx_ans<<" "<<maxx_ans<<endl;
 	}
 	printf("%d %d",minx_ans,maxx_ans);
 }

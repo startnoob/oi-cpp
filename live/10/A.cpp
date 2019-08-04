@@ -29,11 +29,11 @@ int f[1000][1010];
 int main()
 {
     int val,n;
-    cin>>val>>n;
+    scanf("%d%d",&n,&val);
     int ans=0;
     fo(i,1,n,1)
     {
-        cin>>c[i]>>v[i];
+        scanf("%d%d",&c[i],&v[i]);
     }
     for(int i=0;i<=n;i++)
     {
@@ -50,5 +50,5 @@ int main()
             ans=max(ans,f[i][j]);
         }
     }
-    cout<<ans;
+    printf("%d",ans);
 }

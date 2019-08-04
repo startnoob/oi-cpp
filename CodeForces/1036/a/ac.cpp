@@ -2,9 +2,7 @@
 	> File Name: ac.cpp
 	> Author: ralph
 	> Mail: 1694487365@qq.com
-	
  ************************************************************************/
-
 #include<iostream>
 #include<cstdio>
 #include<fstream>

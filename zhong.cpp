@@ -29,7 +29,5 @@ int main()
 {
     int n;
     cin>>n;
-    fo(i,1,n,1) cin>>arr[i];
-    sort(arr+1,arr+n+1);
-    fo(i,1,n,1) cout<<arr[i]<<" ";
+    cout<<n%10;
 }

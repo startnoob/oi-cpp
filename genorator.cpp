@@ -1,23 +1,19 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
-struct node
+bool arr[100];
+signed main()
 {
-    int val1,val2;
-}student[10000];
-bool cmp(node x,node y)
-{
-    if(x.val1==y.val1) return x.val2>y.val2;
-    return x.val1>y.val1;
-}
-int main()
-{
-    int t;
-    scanf("%d",&t);
-    for(int i=1;i<=t;i++)
+    srand(time(0));
+    int n,m;
+    scanf("%d%d",&n,&m);
+    for(int i=1;i<=m;i++) arr[i]=1;
+    for(int i=n*n;i>0;i--)
     {
-        scanf("%d%d",&student[i].val1,&student[i].val2);
+        swap(arr[i],arr[rand()%i+1]);
     }
-    for(int i=1;i<=t;i++) printf("%d %d\n",student[i].val1,student[i].val2);
-    return 0;
+    for(int i=1;i<=n*n;i++)
+    {
+        if(i%n==0) printf("%d\n",arr[i]);
+        else printf("%d",arr[i]);
+    }
 }
-

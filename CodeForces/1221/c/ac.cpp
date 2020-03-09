@@ -1,7 +1,8 @@
 /*************************************************************************
-	> File Name: ./io.cpp
+	> File Name: ac.cpp
 	> Author: ralph
 	> Mail: 1694487365@qq.com
+
  ************************************************************************/
 
 #include<iostream>
@@ -18,7 +19,6 @@
 #include<stack>
 #include<set>
 using namespace std;
-#define ll long long
 #define pb push_back
 #define pi 3.14159265
 #define e 2.71828182
@@ -26,11 +26,21 @@ using namespace std;
 int main()
 {
     int t;
-    cin>>t;
+    scanf("%d",&t);
     while(t--)
     {
-        int a,b;
-        cin>>a>>b;
-        cout<<a+b<<endl;
+        int coder,math,nos;
+        scanf("%d,%d,%d",&coder,&math,&nos);
+        int cnt=min(coder,min(math,nos));
+        coder-=cnt; math-=cnt;  nos-=cnt;
+        int temp;
+        if(math>coder)
+        {
+            cnt+=math/2;
+            coder-=
+
+        }
+
+
     }
 }

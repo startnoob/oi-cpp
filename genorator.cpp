@@ -1,4 +1,16 @@
-#include<bits/stdc++.h>
+#include <iostream> 
+#include <cstdio> 
+#include <fstream> 
+#include <algorithm> 
+#include <cmath> 
+#include <deque> 
+#include <vector> 
+#include <queue> 
+#include <string> 
+#include <cstring> 
+#include <map> 
+#include <stack> 
+#include <set>
 using namespace std;
 bool arr[100];
 signed main()

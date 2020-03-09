@@ -1,7 +1,8 @@
 /*************************************************************************
-	> File Name: ./io.cpp
+	> File Name: ac.cpp
 	> Author: ralph
 	> Mail: 1694487365@qq.com
+	
  ************************************************************************/
 
 #include<iostream>
@@ -18,19 +19,21 @@
 #include<stack>
 #include<set>
 using namespace std;
-#define ll long long
-#define pb push_back
-#define pi 3.14159265
-#define e 2.71828182
-#define fo(x1,x2,x3,x4) for(int x1=x2;x1<=x3;x1+=x4)
+char s[1000];
 int main()
 {
     int t;
     cin>>t;
-    while(t--)
+    scanf("%s",&s[1]);
+    for(int i=t;i>=1;i--)
     {
-        int a,b;
-        cin>>a>>b;
-        cout<<a+b<<endl;
+        if(t%i==0)
+        {
+            for(int j=1;j<=t/i/2;j++)
+            {
+                swap(s[j],s[t/i-j+1]);
+            }
+        }
     }
+    printf("%s",&s[1]);
 }

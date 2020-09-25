@@ -6,39 +6,56 @@
  ************************************************************************/
 #include <bits/stdc++.h>
 using namespace std;
-char command[10000000],out;
-stack<int> loops;
-int type[100000000];
-int tail_command, tail_type;
+void exec(string in)
+{
+    int pos = 0, len = in.size();
+    stack<int> q;
+    string res;
+    for (int i = 0; i < in.size(); i++) {
+        switch (in[i]) {
+        case '>':
+            ++pos;
+            break;
+        case '<':
+            --pos;
+            break;
+        case '+':
+            ++res[pos];
+            break;
+        case '-':
+            --res[pos];
+            break;
+        case '[':
+            if (res[pos] == 0) {
+                for (int j = i; j < in.size(); j++)
+                    if (in[j] == ']') {
+                        i = j;
+                        break;
+                    }
+            }
+            break;
+        case ']':
+            if (res[pos] == 0) {
+                for (int j = i; j >= 0; j--)
+                    if (in[j] == '[') {
+                        i = j;
+                        break;
+                    }
+            }
+            break;
+        case '.':
+            cout << in[pos];
+            break;
+        case ',':
+            cin >> in[pos];
+            break;
+        }
+    }
+}
 int main()
 {
-    //scanf("%s", &command[0]);
-    cin >> command;
-    while (++tail_command <= strlen(command)) {
-        //printf("Running to %d\n", tail_command);
-        if (command[tail_command] == '[') {
-            loops.push(++tail_command);
-        }
-        if (command[tail_command] == ']') {
-            if (tail_type != 0) {
-                tail_command = loops.top();
-            } else
-                loops.pop();
-        }
-        if (command[tail_command] == '>')
-            ++tail_type;
-        if (command[tail_command] == '<')
-            --tail_type;
-        if (command[tail_command] == '+')
-            ++type[tail_type];
-        if (command[tail_command] == '-')
-            --type[tail_type];
-        if (command[tail_command] == '.'){
-            out=type[tail_type];
-            cout<<out;
-        }
-        if (command[tail_command] == ',')
-            cin>>type[tail_type];
-    }
-    for(int i=0;i<100;i++) cout<<type[i]<<" ";
+    string commands;
+    cout << "输入指令：";
+    cin >> commands;
+    exec(commands);
 }
